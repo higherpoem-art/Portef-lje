@@ -86,3 +86,28 @@ nav section h1 {
   max-width: 40%;
   align-items: center;
 }
+
+.projects {
+  display: flex;
+}
+
+.project {
+  position: relative;
+  width: 100%;
+}
+
+.project h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 55%;
+  margin: 0;
+}
+
+.project img {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  opacity: 60%;
+}
