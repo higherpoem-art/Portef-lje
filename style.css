@@ -7,20 +7,21 @@
   src: url('/fonts/intel-one-mono-v2-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-body {
+body { /* generelle innstillinger for body */
   font-family: 'Intel One Mono';
   color: white;
   background-color: black;
 }
-main {
+
+main { /* generelle innstillinger for main */
   padding: 0 5vw 0 5vw ;
 }
 
-body p {
+body p { /* generelle innstillinger for p */
   font-size: 24px;
 }
 
-nav {
+nav { /* nav bar innstillinger */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -34,7 +35,16 @@ nav {
   padding-top: 1vh;
 }
 
-.name {
+button { /* gjør att knappene ikke vises og ikke har effekt på layouten, men fortsatt kan klikkes på */
+  background: none;
+  border: none;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+
+}
+
+.name { /* gjør att navnet i midten av navbaren alltid er i midten av skjermen */
   position: fixed;
   left: 50%;
   top: 50%;
@@ -42,11 +52,11 @@ nav {
   z-index: 2;
 }
 
-.contact {
+.contact { /* gjør att kontaktinformasjonen er plassert til høyre */
   justify-self: end;
 }
 
-.name h1 {
+.name h1 { 
   font-size: 4rem;
   margin: 0;
 }
@@ -60,7 +70,7 @@ nav section h1 {
     margin: 0;
 }
 
-.start {
+.start { /* gjør att start siden alltid tar opp hele skjermen og at teksten er i midten */
   width: 100%;
   height: 100vh;
   display: flex;
@@ -68,7 +78,7 @@ nav section h1 {
 
 }
 
-.start h1 {
+.start h1 { /* gjør att teksten på start siden er i midten */
   top: 50%;
   position: absolute;
 }
@@ -77,6 +87,7 @@ nav section h1 {
   text-align: center;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 200px;
 }
 
 .info article {
@@ -94,19 +105,19 @@ nav section h1 {
 .projects > h1 {
   font-size: 48px;
   align-self: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
-.project-list {
+.project-list { /* gjør att prosjektene vises i et grid med 3 kolonner og 2rem mellomrom */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolonner med like stor bredde */
   gap: 2rem;
 }
 
 .project {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* gjør att bildene ikke går utenfor rammen */
 }
 
 .project h1 {
@@ -119,7 +130,7 @@ nav section h1 {
   margin: 0;
 }
 
-.project img {
+.project img { /* gjør att bildene i prosjektene er kvadratiske og sentrert */
   display: block;
   width: 60%;
   aspect-ratio: 1;
@@ -128,7 +139,7 @@ nav section h1 {
   opacity: 60%;
 }
 
-.contacts {
+.contacts { /* gjør att kontaktinformasjonen er i midten av skjermen og at det er litt mellomrom mellom teksten og toppen/bunnen av skjermen */
   align-self: center;
   display: flex;
   flex-direction: column;

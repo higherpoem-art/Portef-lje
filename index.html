@@ -7,30 +7,30 @@
 <body>
     <nav>
         <section class="info-link">
-            <h1>About</h1>
-            <h1>Projects</h1>
+            <button id="about-button" onclick="scrollToSelected('about')"><h1>About</h1></button> <!-- Knapp for å scrolle til "Om meg" -->
+            <button id="projects-button" onclick="scrollToSelected('projects')"><h1>Projects</h1></button> <!-- Knapp for å scrolle til "Prosjekter" -->
         </section>
-        <Section id="name" class="name" >
+        <Section id="name" class="name"> <!--Egen section med id siden den skal påvirkes av JS-->
             <h1>Henning Bakkemo</h1>
         </section>
         <section class="contact">
-            <h1>Contact</h1>
+            <button id="contact-button" onclick="scrollToSelected('contacts')"><h1>Contact</h1></button> <!-- Knapp for å scrolle til "Kontakt" -->
         </section>
     </nav>
     <main>
         <section class="start">
             <h1>Elev IT VG2</h1>
         </section>
-        <section class="info">
-            <article class="about">
-                <h1>About</h1>
+        <section class="info"> <!-- Informasjon om meg -->
+            <article class="about" id = "about"> <!-- Om meg -->
+                <h1>Me</h1>
                 <p>My name is Henning, im 16 years old.<br>
                     I’m currently a 2nd year at Breivang videregående skole studying Information Technology.<br><br>
                     I got and built my first desktop pc in late 2024, after which i have continued to develop my skills an knowledge.<br><br>
                     From 2019 to 2022 i participated in the First LEGO League as a contestant, and in 2022/2023 as a Mentor.
                 </p>
             </article>
-            <article class="skills">
+            <article class="skills"> <!-- Ferdigheter -->
                 <h1>Skills</h1>
                 <p>Coding Languages<br>
                     HTML/CSS/JS, Python, SQL<br><br>
@@ -45,10 +45,10 @@
                 </p>
             </article>
         </section>
-        <section class="projects">
+        <section class="projects" id="projects"> <!-- Prosjekter -->
             <h1>Projects</h1>
-            <section class="project-list">
-                <article class="project">
+            <section class="project-list"> <!-- liste med prosjekter -->
+                <article class="project"> <!-- individuelt prosjekt-->
                     <h1>Setting up and operating a minecraft server</h1>
                     <img src="images/minecraft-creeper-face.jpg" alt="Minecraft Logo">
                 </article>
@@ -60,7 +60,7 @@
                     <h1>Combining weak laptops to make server and personal laptops</h1>
                     <img src="images/laptop.jpg">
                 </article>
-                <article class="project">
+                <article class="project"> <!-- kom ikke på flere prosjekter som er verdt å vise -->
                     <h1>project placeholder</h1>
                     <img src="images/laptop.jpg">
                 </article>
@@ -74,7 +74,7 @@
                 </article>
             </section>
         </section>
-        <section class="contacts">
+        <section class="contacts" id="contacts"> <!-- kontakt informasjon-->
             <h1>Find Me</h1>
             <h2>Email</h2>
             <h2>Discord</h2>
@@ -100,6 +100,14 @@
     window.addEventListener('scroll', updateNamePosition, { passive: true });
 
     updateNamePosition();
+
+    function scrollToSelected(Selected) { // denne forstår jeg
+        const element = document.getElementById(Selected); // setter element id til dit 
+        if (element) {
+            element.style.scrollMargin = '80px'; // legger til litt margin på toppen for å unngå at det blir dekket av navbaren
+            element.scrollIntoView({ behavior: 'smooth' }); // scroller til elementet med smooth scroll
+        }
+    }
 </script>
 
 </html>
